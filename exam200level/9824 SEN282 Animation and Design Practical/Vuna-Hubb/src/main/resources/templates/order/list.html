@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+	<h1>Name: Aduradu Chinazom Angela</h1>
+	<h1>Matric Number: VUG/SEN/23/9824</h1>
+<div th:each="order : ${orders.content}">
+    <p><b th:text="${order.foodName}"></b> ordered by <i th:text="${order.userName}"></i> at <span th:text="${order.orderTime}"></span></p>
+    <a th:href="@{/comments/new/{id}(id=${order.id})}">Comment</a>
+</div>
+<div>
+    <a th:if="${orders.hasPrevious()}" th:href="@{/orders(page=${orders.number - 1})}">Previous</a>
+    <a th:if="${orders.hasNext()}" th:href="@{/orders(page=${orders.number + 1})}">Next</a>
+</div>
+</body>
+</html>

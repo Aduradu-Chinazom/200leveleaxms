@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header">
+    <h1>Veritas Classy Restaurant</h1>
+    <p>Bwari, Abuja.</p><br>
+    <a th:href="@{/users}">Users</a>
+    <a th:href="@{/foods}">Food</a>
+    <a th:href="@{/orders}">Food Order</a>
+</div>
+</body>
+</html>
